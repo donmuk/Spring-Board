@@ -4,7 +4,5 @@
 
 
 ## 참조 사이트
-
-### SQL 정리 & 카페 Q&A
 * https://melonpeach.tistory.com/ 
 
