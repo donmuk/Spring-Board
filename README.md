@@ -1,7 +1,13 @@
 # 게시판 만들기 Project
 
-* `SQLD 요약본.pdf`:  SQL 전문가 가이드 2013 Edition 요약
+### 프레임워크
+- Spring, MyBatis
 
+### 언어
+- Java, JavaScript, SQL
+
+### 개발툴
+- Eclipse, SQL Developer
 
 ## 참조 사이트
 * https://melonpeach.tistory.com/ 
