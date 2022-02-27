@@ -7,19 +7,20 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<!-- 부가적인 테마 -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-	 	
+
 	 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<title>회원탈퇴</title>
 	</head>
+
 	<script type="text/javascript">
 		$(document).ready(function(){
 			// 취소
 			$(".cencle").on("click", function(){
-				
+
 				location.href = "/";
-						    
+
 			})
-		
+
 			$("#submit").on("click", function(){
 				if($("#userPass").val()==""){
 					alert("비밀번호를 입력해주세요.");
@@ -32,7 +33,7 @@
 					dateType : "json",
 					data : $("#delForm").serializeArray(),
 					success: function(data){
-						
+
 						if(data==true){
 							if(confirm("회원탈퇴하시겠습니까?")){
 								$("#delForm").submit();
@@ -43,13 +44,12 @@
 						}
 					}
 				})
-				
+
 			});
-			
-				
-			
 		})
 	</script>
+
+	<!-- 화면 시작 -->
 	<body>
 		<section id="container">
 			<form action="/member/memberDelete" method="post" id="delForm">
@@ -76,7 +76,7 @@
 				</c:if>
 			</div>
 		</section>
-		
+
 	</body>
-	
+
 </html>
