@@ -7,21 +7,21 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<!-- 부가적인 테마 -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-	 	
+
 	 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	 	
+
 	 	<title>게시판</title>
 	</head>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			var formObj = $("form[name='updateForm']");
-			
+
 			$(document).on("click","#fileDel", function(){
 				$(this).parent().remove();
 			})
-			
+
 			fn_addFile();
-			
+
 			$(".cancel_btn").on("click", function(){
 				event.preventDefault();
 				location.href = "/board/readView?bno=${update.bno}"
@@ -30,7 +30,7 @@
 					   + "&searchType=${scri.searchType}"
 					   + "&keyword=${scri.keyword}";
 			})
-			
+
 			$(".update_btn").on("click", function(){
 				if(fn_valiChk()){
 					return false;
@@ -40,7 +40,7 @@
 				formObj.submit();
 			})
 		})
-			
+
 		function fn_valiChk(){
 			var updateForm = $("form[name='updateForm'] .chk").length;
 			for(var i = 0; i<updateForm; i++){
@@ -58,48 +58,49 @@
 			});
 			$(document).on("click","#fileDelBtn", function(){
 				$(this).parent().remove();
-				
+
 			});
 		}
  		var fileNoArry = new Array();
  		var fileNameArry = new Array();
  		function fn_del(value, name){
- 			
+
  			fileNoArry.push(value);
  			fileNameArry.push(name);
  			$("#fileNoDel").attr("value", fileNoArry);
  			$("#fileNameDel").attr("value", fileNameArry);
  		}
 	</script>
+
+	<!-- 화면 시작 -->
 	<body>
-	
 		<div id="root">
 			<header>
 				<h1> 게시판</h1>
 			</header>
 			<hr />
-			 
+
 			<div>
 				<%@include file="nav.jsp" %>
 			</div>
 			<hr />
-			
+
 			<section id="container">
 				<form name="updateForm" role="form" method="post" action="/board/update" enctype="multipart/form-data">
 					<input type="hidden" name="bno" value="${update.bno}" readonly="readonly"/>
-					<input type="hidden" id="page" name="page" value="${scri.page}"> 
-					<input type="hidden" id="perPageNum" name="perPageNum" value="${scri.perPageNum}"> 
-					<input type="hidden" id="searchType" name="searchType" value="${scri.searchType}"> 
-					<input type="hidden" id="keyword" name="keyword" value="${scri.keyword}"> 
-					<input type="hidden" id="fileNoDel" name="fileNoDel[]" value=""> 
-					<input type="hidden" id="fileNameDel" name="fileNameDel[]" value=""> 
+					<input type="hidden" id="page" name="page" value="${scri.page}">
+					<input type="hidden" id="perPageNum" name="perPageNum" value="${scri.perPageNum}">
+					<input type="hidden" id="searchType" name="searchType" value="${scri.searchType}">
+					<input type="hidden" id="keyword" name="keyword" value="${scri.keyword}">
+					<input type="hidden" id="fileNoDel" name="fileNoDel[]" value="">
+					<input type="hidden" id="fileNameDel" name="fileNameDel[]" value="">
 					<table>
 						<tbody>
 							<tr>
 								<td>
 									<label for="title">제목</label><input type="text" id="title" name="title" value="${update.title}" class="chk" title="제목을 입력하세요."/>
 								</td>
-							</tr>	
+							</tr>
 							<tr>
 								<td>
 									<label for="content">내용</label><textarea id="content" name="content" class="chk" title="내용을 입력하세요."><c:out value="${update.content}" /></textarea>
@@ -113,7 +114,7 @@
 							<tr>
 								<td>
 									<label for="regdate">작성날짜</label>
-									<fmt:formatDate value="${update.regdate}" pattern="yyyy-MM-dd"/>					
+									<fmt:formatDate value="${update.regdate}" pattern="yyyy-MM-dd"/>
 								</td>
 							</tr>
 							<tr>
@@ -128,7 +129,7 @@
 									</c:forEach>
 								</td>
 							</tr>
-						</tbody>			
+						</tbody>
 					</table>
 					<div>
 						<button type="button" class="update_btn">저장</button>

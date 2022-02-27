@@ -9,9 +9,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<!-- 부가적인 테마 -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-	
+
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- 
+
 </head>
 <a href="/board/list">게시판</a><br />
 <script type="text/javascript">
@@ -19,15 +19,17 @@
 		$("#logoutBtn").on("click", function(){
 			location.href="member/logout";
 		})
-		
+
 	})
-	
+
 	//회원가입화면 띄우기
 	function memberRegister(){
-		
+
 		location.href="member/register";
 	}
 </script>
+
+<!-- 화면 시작 -->
 <body>
 	<form name='homeForm' method="post" action="/member/login">
 		<c:if test="${member == null}">

@@ -3,6 +3,8 @@
 <style type="text/css">
 	li {list-style: none; display:inline; padding: 6px;}
 </style>
+
+<!-- 화면 시작 -->
 <ul>
 	<li><a href="/board/list">목록</a></li>
 	<li><a href="/board/writeView">글 작성</a></li>

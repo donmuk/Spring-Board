@@ -6,9 +6,9 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<!-- 부가적인 테마 -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-	 	
+
 	 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	 	
+
 	 	<title>게시판</title>
 	</head>
 	<script type="text/javascript">
@@ -41,23 +41,24 @@
 			});
 			$(document).on("click","#fileDelBtn", function(){
 				$(this).parent().remove();
-				
+
 			});
 		}
 	</script>
+
+	<!-- 화면 시작 -->
 	<body>
-	
 		<div id="root">
 			<header>
 				<h1> 게시판</h1>
 			</header>
 			<hr />
-			 
+
 			<div>
 				<%@include file="nav.jsp" %>
 			</div>
 			<hr />
-			
+
 			<section id="container">
 				<form name="writeForm" method="post" action="/board/write" enctype="multipart/form-data">
 					<table>
@@ -67,7 +68,7 @@
 									<td>
 										<label for="title">제목</label><input type="text" id="title" name="title" class="chk" title="제목을 입력하세요."/>
 									</td>
-								</tr>	
+								</tr>
 								<tr>
 									<td>
 										<label for="content">내용</label><textarea id="content" name="content" class="chk" title="내용을 입력하세요."></textarea>
@@ -84,20 +85,20 @@
 									</td>
 								</tr>
 								<tr>
-									<td>						
-										<button class="write_btn" type="submit">작성</button>	
-										<button class="fileAdd_btn" type="button">파일추가</button>	
+									<td>
+										<button class="write_btn" type="submit">작성</button>
+										<button class="fileAdd_btn" type="button">파일추가</button>
 									</td>
-								</tr>	
+								</tr>
 							</c:if>
 							<c:if test="${member.userId == null}">
 								<p>로그인 후에 작성하실 수 있습니다.</p>
 							</c:if>
-							
-						</tbody>			
+
+						</tbody>
 					</table>
 				</form>
-				
+
 			</section>
 			<hr />
 		</div>
